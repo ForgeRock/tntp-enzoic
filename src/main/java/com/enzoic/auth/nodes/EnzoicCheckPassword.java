@@ -130,7 +130,7 @@ public class EnzoicCheckPassword implements Node {
 			if (config.CheckForSynchronousOrAsynchronousFlow()) {
 				AsyncThread thread = new AsyncThread(userName, password, context);
 				thread.start();
-				return Action.goTo(EnzoicCheckPasswordOutcomes.TRUE.name()).build();
+				return Action.goTo(EnzoicCheckPasswordOutcomes.FALSE.name()).build();
 			} else {
 				boolean result = processPassword(userName, password,context);
 				logger.debug("Result from synchronous process is " + result);
